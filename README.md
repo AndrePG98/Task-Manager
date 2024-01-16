@@ -1,2 +1,3 @@
 # Task-Manager
-Simple task manager written with Node.js , Express with Jade , TypeORM and PostgresSQL
+Simple task manager written with Node.js , Express, Jade and TypeORM
+Postgres database deployed using Docker
