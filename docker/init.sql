@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS tasks (
+    id VARCHAR(255) PRIMARY KEY NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description VARCHAR(255) NOT NULL,
+    status VARCHAR(255) NOT NULL,
+    due_date DATE NOT NULL
+);
+

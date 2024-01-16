@@ -1,0 +1,20 @@
+mixin tasks(status)
+	.div
+		.title #{status}
+		div(ondragover="onDragOver(event)", ondrop="onDrop(event, `#{status}`)" id=status).tasks
+			each task in tasks
+				if task.status == status
+					div(id=task.id, onclick="taskOnClick(event, `#{task.id}`)" ,draggable="true", ondrop="onDrop(event)",  ondragstart="onDragStart(event,this)", ondragend="onDragEnd(event,this)").task
+						.taskName= task.title
+						.dueDate= task.due_date
+						button(type="button" onclick="deleteTask('#{task.id}')").deleteBtn
+							span(class="material-symbols-outlined") delete_sweep
+					#taskModal
+						.taskModalBody
+							.taskModalHeader
+								div#taskTitle(ondblclick="editTitle(this)", onblur="saveTitle(this)" title="Double click to edit")= task.title 
+								button#modalDueDate(type="button", onclick="editDate(event, this)", title="Click to edit")= task.due_date
+							div#description(ondblclick="editDescription(this)", onblur="saveDescription(this)", title="Double click to edit")= task.description
+							.taskModalFooter
+								button(type="button", onclick="closeModal()").closeBtn Close 
+								button(type="button", onclick="applyClick(`#{task.id}`)").applyBtn Apply 

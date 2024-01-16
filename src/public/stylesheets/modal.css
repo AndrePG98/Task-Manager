@@ -1,0 +1,139 @@
+#addTask {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+	font-size: 2rem;
+	z-index: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.6);
+	border: none;
+	transition: background-color, border 1ms ease-in-out;
+	transition: transform 5ms;
+	overflow: hidden;
+}
+
+#addTask > span {
+	transition: all 1s ease-in-out;
+}
+
+#addTask:hover > span {
+	transform-origin: origin;
+	transform: rotate(540deg);
+}
+
+#addTask:hover {
+	transform: scale(1.1);
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+}
+
+#addTask:active {
+	transform: scale(0.95);
+}
+
+#modalWrapper {
+	display: none;
+	position: fixed;
+	justify-content: center;
+	align-items: center;
+	z-index: 4;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+	display: grid;
+	grid-template-rows: 0.5fr 2fr 0.5fr;
+	row-gap: 0px;
+	width: 45%;
+	height: 45%;
+	background-color: rgba(255, 255, 255, 0.4);
+	border-radius: 5%;
+	border: 2px solid rgba(0, 0, 0, 1);
+	overflow: hidden;
+}
+
+.modalHeader {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 3rem;
+}
+
+.modalFooter {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+}
+
+.modalFooter > * {
+	width: 100%;
+	height: 100%;
+	border: none;
+	border-right: solid 1px rgba(0, 0, 0, 0.2);
+}
+
+.modalBody {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modalBody > form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 5px;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding: 1rem;
+}
+
+.modalForm > * > p {
+	font-size: 2rem;
+}
+
+.modalForm > * > input {
+	font-size: 1rem;
+}
+
+.modalForm > * {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: start;
+	gap: 5px;
+}
+
+.modalForm > * > input {
+	width: 100%;
+}
+
+.modalform > :nth-child(2) {
+	flex: 1;
+}
+
+.taskDescription > textarea {
+	height: 100%;
+	width: 100%;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	text-indent: 0;
+}

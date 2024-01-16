@@ -1,0 +1,18 @@
+mixin addTaskModal()
+    #modalWrapper
+        .modal 
+            .modalHeader Add Task
+            .modalBody
+                form(action="/addTask", method="post").modalForm
+                    .taskTitle 
+                        p Title
+                        input(type="text", name="title")
+                    .taskDescription
+                        p Description 
+                        textarea( name="description")
+                    .taskDate
+                        p Date 
+                        input(type="text", name="date")#date
+            .modalFooter
+                button(type="button")#modalCloseBtn Close 
+                button(type="summit")#submit Add 
